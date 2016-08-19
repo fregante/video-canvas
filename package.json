@@ -1,6 +1,6 @@
 {
   "name": "video-canvas",
-  "version": "0.0.0",
+  "version": "3.0.0",
   "description": "Paint video on canvas. Extra light.",
   "license": "MIT",
   "repository": "bfred-it/video-canvas",
