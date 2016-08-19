@@ -1,0 +1,44 @@
+{
+  "name": "video-canvas",
+  "version": "0.0.0",
+  "description": "Paint video on canvas. Extra light.",
+  "license": "MIT",
+  "repository": "bfred-it/video-canvas",
+  "author": "Federico Brigante <bfred-it@users.noreply.github.com> (twitter.com/bfred_it)",
+  "keywords": [
+    "browser",
+    "video",
+    "canvas",
+    "paint",
+    "play",
+    "playback",
+    "requestanimationframe"
+  ],
+  "files": [
+    "dist/video-canvas.common-js.js",
+    "dist/video-canvas.es-modules.js"
+  ],
+  "main": "dist/video-canvas.common-js.js",
+  "jsnext:main": "dist/video-canvas.es-modules.js",
+  "scripts": {
+    "build:js": "bfred-npm-bundler video-canvas videoCanvas",
+    "build": "npm-run-all --silent jsfix build:*",
+    "jsfix": "xo --fix",
+    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error",
+    "watch": "npm-run-all --parallel --silent watch:*",
+    "prepublish": "npm run build",
+    "test": "xo; npm run build"
+  },
+  "devDependencies": {
+    "bfred-npm-bundler": "^7.1.2",
+    "npm-run-all": "^2.3.0",
+    "onchange": "^2.5.0",
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "esnext": true,
+    "env": [
+      "browser"
+    ]
+  }
+}
