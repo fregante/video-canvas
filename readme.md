@@ -66,8 +66,6 @@ No dependencies.
 * [`get-media-size`](https://github.com/bfred-it/get-media-size): get the real size of any media: images, videos, canvas and canvas' contexts
 * [`iphone-inline-video`](https://github.com/bfred-it/iphone-inline-video): You don't need canvas to play video inline on the iPhone
 
-No dependencies.
-
 ## License
 
 MIT © [Federico Brigante](http://twitter.com/bfred_it)
