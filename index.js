@@ -11,7 +11,7 @@ export default (video, opts = {}) => {
 	if (opts.updateSize !== false) {
 		const updateSize = () => {
 			canvas.width = video.videoWidth;
-			canvas.height = video.height;
+			canvas.height = video.videoHeight;
 		};
 		video.addEventListener('loadedmetadata', updateSize);
 		updateSize();
