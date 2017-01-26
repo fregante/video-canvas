@@ -15,8 +15,7 @@
     "requestanimationframe"
   ],
   "files": [
-    "dist/video-canvas.common-js.js",
-    "dist/video-canvas.es-modules.js"
+    "dist"
   ],
   "main": "dist/video-canvas.common-js.js",
   "jsnext:main": "dist/video-canvas.es-modules.js",
@@ -31,14 +30,17 @@
   },
   "devDependencies": {
     "bfred-npm-bundler": "^7.1.2",
-    "npm-run-all": "^2.3.0",
-    "onchange": "^2.5.0",
-    "xo": "^0.16.0"
+    "npm-run-all": "^4.0.1",
+    "onchange": "^3.2.1",
+    "xo": "^0.17.1"
   },
   "xo": {
     "esnext": true,
     "env": [
       "browser"
     ]
+  },
+  "dependencies": {
+    "intervalometer": "^1.0.2"
   }
 }

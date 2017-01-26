@@ -1,4 +1,4 @@
-import Intervalometer from './lib/intervalometer';
+import {frameIntervalometer} from 'intervalometer';
 
 export default (video, opts = {}) => {
 	const canvas = opts.canvas || document.createElement('canvas');
@@ -17,7 +17,7 @@ export default (video, opts = {}) => {
 		updateSize();
 	}
 
-	const updater = new Intervalometer(() => drawCall(ctx, video));
+	const updater = frameIntervalometer(() => drawCall(ctx, video));
 	video.addEventListener('play', updater.start);
 	video.addEventListener('pause', updater.stop);
 	video.addEventListener('error', updater.stop);
