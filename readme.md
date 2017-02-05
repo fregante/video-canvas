@@ -6,14 +6,23 @@
 [![Travis build status](https://api.travis-ci.org/bfred-it/video-canvas.svg?branch=master)](https://travis-ci.org/bfred-it/video-canvas)
 [![gzipped size](https://img.shields.io/npm/v/video-canvas.svg)](https://www.npmjs.com/package/video-canvas) 
 
-`video-canvas` will take care of painting a video on canvas for you. In the easiest of setups, you provide a video and you get a correctly-sized self-updating canvas ready to be used.
+`video-canvas` will take care of painting a video on canvas for you. In the easiest of setups, you provide a video and you get a correctly-sized self-updating `canvas` ready to be used.
 
-`video-canvas` starts and pauses painting together with the video. If the video is playing, the canvas will be painted, otherwise nothing will be running.
+Features:
+
+- It automatically starts and pauses painting with `video.play()` and `video.pause()`.
+- If the video is paused or in a background tab, nothing is painted.
+- It automatically creates a `canvas` element from your video (optional).
+- It automatically resizes the canvas to match your video (optional).
 
 ## Install
 
 ```sh
 npm install --save video-canvas
+```
+
+```js
+var videoCanvas = require('video-canvas');
 ```
 
 ```js
@@ -26,7 +35,8 @@ Simple usage:
 
 ```js
 const video = document.querySelector('video');
-const canvas = videoCanvas(video);
+const canvas = videoCanvas(video); // returns the <canvas> element
+document.body.appendChild(canvas)
 video.play();
 video.pause();
 ```
@@ -34,12 +44,12 @@ video.pause();
 Provide your own canvas:
 
 ```js
-const canvas = videoCanvas(video, {
+videoCanvas(video, {
 	canvas: document.querySelector('.your-own-canvas'),
 });
 ```
 
-By default, `video-canvas` takes care of matching the canvas size to the video size. If you want to prevent this behavior, pass `updateSize: false`
+By default, `video-canvas` will automatically match the canvas size to the video size, whenever that changes. If you want to prevent this behavior, pass `updateSize: false`
 
 ```js
 const canvas = videoCanvas(video, {
@@ -47,7 +57,7 @@ const canvas = videoCanvas(video, {
 });
 ```
 
-If you want to make a custom draw call, pass a function as `drawCall`
+If you want to customize the draw call, pass your drawing function as `drawCall`
 
 ```js
 const canvas = videoCanvas(video, {
