@@ -22,13 +22,13 @@ export default (video, opts = {}) => {
 	// 'playing' is consistently fired when the video resumes playing
 	// after a pause, a stall, or a seek.
 	video.addEventListener('playing', updater.play);
-	
+
 	// 'pause' is fired after a .pause(), on 'ended', or on 'seeking'.
 	// 'waiting', 'abort' and 'error' are network-related.
 	['pause', 'waiting', 'abort', 'error'].forEach(event => {
 		video.addEventListener(event, updater.stop);
 	});
-	
+
 	if (!video.paused) {
 		updater.start();
 	}
