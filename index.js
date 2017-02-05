@@ -18,7 +18,11 @@ export default (video, opts = {}) => {
 	}
 
 	const updater = frameIntervalometer(() => drawCall(ctx, video));
-	video.addEventListener('play', updater.start);
+
+	// 'playing' is consistently fired when the video resumes playing
+	// after a pause, a stall, or a seek.
+	video.addEventListener('playing', updater.play);
+	
 	video.addEventListener('pause', updater.stop);
 	video.addEventListener('error', updater.stop);
 	if (!video.paused) {
