@@ -32,7 +32,7 @@
     "bfred-npm-bundler": "^7.1.2",
     "npm-run-all": "^4.0.1",
     "onchange": "^3.2.1",
-    "xo": "^0.17.1"
+    "xo": "*"
   },
   "xo": {
     "esnext": true,
