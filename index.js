@@ -24,10 +24,12 @@ export default (video, opts = {}) => {
 	video.addEventListener('playing', updater.play);
 
 	// 'pause' is fired after a .pause(), on 'ended', or on 'seeking'.
-	// 'waiting', 'abort' and 'error' are network-related.
-	['pause', 'waiting', 'abort', 'error'].forEach(event => {
-		video.addEventListener(event, updater.stop);
-	});
+	video.addEventListener('pause', updater.stop);
+
+	// 'abort', 'error' and 'waiting' are network-related.
+	video.addEventListener('abort', updater.stop);
+	video.addEventListener('error', updater.stop);
+	video.addEventListener('waiting', updater.stop);
 
 	if (!video.paused) {
 		updater.start();
