@@ -2,45 +2,45 @@
   "name": "video-canvas",
   "version": "4.0.2",
   "description": "Paint video on canvas. Extra light.",
-  "license": "MIT",
-  "repository": "bfred-it/video-canvas",
-  "author": "Federico Brigante <github@bfred.it> (bfred.it)",
   "keywords": [
     "browser",
-    "video",
     "canvas",
     "paint",
     "play",
     "playback",
-    "requestanimationframe"
+    "requestanimationframe",
+    "video"
   ],
+  "repository": "fregante/video-canvas",
+  "license": "MIT",
+  "author": "Federico Brigante <opensource@bfred.it> (bfred.it)",
   "files": [
     "dist"
   ],
   "main": "dist/video-canvas.common-js.js",
   "jsnext:main": "dist/video-canvas.es-modules.js",
   "scripts": {
-    "build:js": "bfred-npm-bundler video-canvas videoCanvas",
     "build": "npm-run-all --silent jsfix build:*",
+    "build:js": "bfred-npm-bundler video-canvas videoCanvas",
     "jsfix": "xo --fix",
-    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error",
-    "watch": "npm-run-all --parallel --silent watch:*",
     "prepublish": "npm run build",
-    "test": "xo; npm run build"
+    "test": "xo; npm run build",
+    "watch": "npm-run-all --parallel --silent watch:*",
+    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error"
+  },
+  "xo": {
+    "env": [
+      "browser"
+    ],
+    "esnext": true
+  },
+  "dependencies": {
+    "intervalometer": "^1.0.2"
   },
   "devDependencies": {
     "bfred-npm-bundler": "^7.1.2",
     "npm-run-all": "^4.0.1",
     "onchange": "^3.2.1",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true,
-    "env": [
-      "browser"
-    ]
-  },
-  "dependencies": {
-    "intervalometer": "^1.0.2"
   }
 }

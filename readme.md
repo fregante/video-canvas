@@ -2,9 +2,9 @@
 
 > Paint video on canvas. Extra light.
 
-[![gzipped size](https://badges.herokuapp.com/size/github/bfred-it/video-canvas/master/dist/video-canvas.browser.js?gzip=true&label=gzipped%20size)](#readme)
-[![Travis build status](https://api.travis-ci.org/bfred-it/video-canvas.svg?branch=master)](https://travis-ci.org/bfred-it/video-canvas)
-[![gzipped size](https://img.shields.io/npm/v/video-canvas.svg)](https://www.npmjs.com/package/video-canvas) 
+[![gzipped size](https://badges.herokuapp.com/size/github/fregante/video-canvas/master/dist/video-canvas.browser.js?gzip=true&label=gzipped%20size)](#readme)
+[![Travis build status](https://api.travis-ci.org/fregante/video-canvas.svg?branch=master)](https://travis-ci.org/fregante/video-canvas)
+[![gzipped size](https://img.shields.io/npm/v/video-canvas.svg)](https://www.npmjs.com/package/video-canvas)
 
 `video-canvas` will take care of painting a video on canvas for you. In the easiest of setups, you provide a video and you get a correctly-sized self-updating `canvas` ready to be used.
 
@@ -73,9 +73,9 @@ No dependencies.
 
 ## Related
 
-* [`get-media-size`](https://github.com/bfred-it/get-media-size): get the real size of any media: images, videos, canvas and canvas' contexts
-* [`iphone-inline-video`](https://github.com/bfred-it/iphone-inline-video): You don't need canvas to play video inline on the iPhone
+* [`get-media-size`](https://github.com/fregante/get-media-size): get the real size of any media: images, videos, canvas and canvas' contexts
+* [`iphone-inline-video`](https://github.com/fregante/iphone-inline-video): You don't need canvas to play video inline on the iPhone
 
 ## License
 
-MIT © [Federico Brigante](http://twitter.com/bfred_it)
+MIT © [Federico Brigante](https://bfred.it)
