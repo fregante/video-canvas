@@ -21,7 +21,7 @@ export default (video, opts = {}) => {
 
 	// 'playing' is consistently fired when the video resumes playing
 	// after a pause, a stall, or a seek.
-	video.addEventListener('playing', updater.play);
+	video.addEventListener('playing', updater.start);
 
 	// 'pause' is fired after a .pause(), on 'ended', or on 'seeking'.
 	video.addEventListener('pause', updater.stop);
