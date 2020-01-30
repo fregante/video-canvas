@@ -20,27 +20,20 @@
   "main": "dist/video-canvas.common-js.js",
   "jsnext:main": "dist/video-canvas.es-modules.js",
   "scripts": {
-    "build": "npm-run-all --silent jsfix build:*",
-    "build:js": "bfred-npm-bundler video-canvas videoCanvas",
-    "jsfix": "xo --fix",
-    "prepublish": "npm run build",
-    "test": "xo; npm run build",
-    "watch": "npm-run-all --parallel --silent watch:*",
-    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error"
+    "build": "bfred-npm-bundler video-canvas videoCanvas",
+    "version": "npm run build && git add -A dist",
+    "test": "xo && npm run build && git checkout HEAD -- dist"
   },
   "xo": {
     "env": [
       "browser"
-    ],
-    "esnext": true
+    ]
   },
   "dependencies": {
-    "intervalometer": "^1.0.2"
+    "intervalometer": "^1.0.5"
   },
   "devDependencies": {
     "bfred-npm-bundler": "^7.1.2",
-    "npm-run-all": "^4.0.1",
-    "onchange": "^3.2.1",
-    "xo": "*"
+    "xo": "^0.25.3"
   }
 }

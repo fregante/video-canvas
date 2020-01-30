@@ -13,6 +13,7 @@ export default (video, opts = {}) => {
 			canvas.width = video.videoWidth;
 			canvas.height = video.videoHeight;
 		};
+
 		video.addEventListener('loadedmetadata', updateSize);
 		updateSize();
 	}
@@ -34,5 +35,6 @@ export default (video, opts = {}) => {
 	if (!video.paused) {
 		updater.start();
 	}
+
 	return canvas;
 };
